@@ -1,9 +1,11 @@
 # Simple event generator
-A quite simple event generator which allows to simulate sensors and create quite large amount of points (up to 10 millon, but depends on memory)
+Not so long I was searching for event generator that allows to generate a couple of thousand events like sensor data. I looked for a bit of code or a small application but all I found were hardware event generators for automobile and a huge generator here on github. So I decided to write it by myself. Althogh it's far from perfect but there are some plans for improvement and I also intend to keep it as simple as possible.
 
 ## Description
+A quite simple event generator which allows to simulate sensors and create quite large amount of points (up to 10 millon, but depends on memory)
 This is, in fact, a function written in Python which creates numbers one by one. At the moment it's possible to customize how exactly this is done, but there are not so much customization options yet. For now it's implementation supposes that there are small sub-periods where the values are equal. At the end of each sub-period function make a desicion in which direction the series must be changed (stay still, go down or go up). This desision is based on desicion on previous step, e.g. it's more likely that series will go down if previous step also went down.
 Function requires *numpy* and *scipy.stats* to be imported.
+Currently it's implemented as Jupyter notebook
 
 ## Inputs:
 **period_len** - a number of events to generate. It's recommended to use values from 10000 to 10000000. If less - try to set **length_random** as *False* and set a **length** to a lesser values (e.g. up to 100). If you set more than 10 million, it may cause a memory overflow
@@ -26,6 +28,7 @@ Numpy array of shape = (**period_len**,)
 
 # Plans:
 1) create more complicated (and adjustable) strategy for choosing next steps
-2) add option to directly set deviation (now it's stochastic from 0 to **deviation * 2**)
-3) add some features to generate series for specific cases
-4) find a way to optimize fuction to generate large amounts os points
+2) add an option to directly set deviation (now it's stochastic from 0 to **deviation * 2**)
+3) add an option to choose a different distributions for _step_ calculation
+4) add some features to generate series for specific cases
+5) find a way to optimize fuction to generate large amounts os points
