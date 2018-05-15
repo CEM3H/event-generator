@@ -1,5 +1,5 @@
 # Simple event generator
-Not so long I was searching for event generator that allows to generate a couple of thousand events like sensor data. I looked for a bit of code or a small application but all I found were hardware event generators for automobile and a huge generator here on github. So I decided to write it by myself. Althogh it's far from perfect but there are some plans for improvement and I also intend to keep it as simple as possible.
+Not so long ago I was searching for event generator that allows to generate a couple of thousand events like sensor data. I looked for a bit of code or a small application but all I found were hardware event generators for automobile and a huge generator here on github. So I decided to write it by myself. Althogh it's far from perfect but there are some plans for improvement and I also intend to keep it as simple as possible.
 
 ## Description
 A quite simple event generator which allows to simulate sensors and create quite large amount of points (up to 10 millon, but depends on memory)
